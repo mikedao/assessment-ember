@@ -1,7 +1,7 @@
 <ul>
 {{#each list in model}}
   {{#if list.active}}
-  <li>{{link-to list.title 'lists.show' list}} Status: {{list.active}}</li>
+  <li>{{link-to list.title 'lists.show' list}} Status: {{list.active}} ({{list.tasks.length}})</li>
   {{/if}}
 {{/each}}
   </ul>
