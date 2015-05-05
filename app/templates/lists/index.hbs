@@ -1,19 +1,31 @@
-<p>Active</p>
+<p>Active</p><input type="button" value="Hide/Unhide" onclick="Show_Div(inactive)" />
 <ul>
-{{#each list in model}}
+  {{#each list in model}}
   {{#if list.active}}
-    {{list-component list = list}}
+  {{list-component list = list}}
   {{/if}}
-{{/each}}
-  </ul>
-<div id="inactive">
+  {{/each}}
+</ul>
+<div id="inactive" style="display:none">
   <p>Inactive</p>
   <ul>
-  {{#each list in model}}
-  {{#unless list.active}}
+    {{#each list in model}}
+    {{#unless list.active}}
     {{list-component list = list}}
-  {{/unless}}
-{{/each}}
-</ul>
+    {{/unless}}
+    {{/each}}
+  </ul>
 </div>
-  {{outlet}}
+{{outlet}}
+
+<script type = "text/javascript">
+
+function Show_Div(Div_id) {
+  if (false == $(Div_id).is(':visible')) {
+    $(Div_id).show(250);
+  }
+  else {
+    $(Div_id).hide(250);
+  }
+}
+</script>
