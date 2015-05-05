@@ -1,3 +1,11 @@
 <h3>LISTS</h3>
 
+<section id="new-list">
+  <h2>Add a new list</h2>
+  <form class="new-list-form">
+    <label>Title:</label>
+    {{input type="text" placeholder="Title" class="new-list-title" value=title}}
+    <input type="submit" value="Add a new list" {{ action 'addNewList'}}>
+  </form>
+</section>
 {{outlet}}
