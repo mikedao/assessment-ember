@@ -1,3 +1,4 @@
+<p>Active</p>
 <ul>
 {{#each list in model}}
   {{#if list.active}}
@@ -5,4 +6,14 @@
   {{/if}}
 {{/each}}
   </ul>
+<div id="inactive">
+  <p>Inactive</p>
+  <ul>
+  {{#each list in model}}
+  {{#unless list.active}}
+  <li>{{link-to list.title 'lists.show' list}} Status: {{list.active}} ({{list.tasks.length}})</li>
+  {{/unless}}
+{{/each}}
+</ul>
+</div>
   {{outlet}}
