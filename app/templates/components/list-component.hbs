@@ -7,4 +7,13 @@
     <button class="delete" {{action 'delete'}}>Delete</button>
   </div>
   {{/unless}}
+  <div class="buttons">
+    <button class="edit" {{action 'edit'}}>Edit</button>
+  </div>
+{{#if editing}}
+<form class="edit-title-form">
+  <label>Name</label>
+  {{input type="text" placeholder="Title" class="list-title" value=list.title}}
+</form>
+{{/if}}
 {{yield}}
