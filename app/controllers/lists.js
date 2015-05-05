@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
            alert(this.getProperties('title'));
            let list = this.getProperties('title');
            this.store.createRecord('list', list).save();
-         }
+         },
        }
 
 });

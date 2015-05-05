@@ -1,0 +1,10 @@
+{{~#link-to 'lists.show' list}}
+<p>{{list.title}} ({{list.tasks.length}})
+</p>
+{{~/link-to}}
+{{#unless list.active}}
+  <div class="buttons">
+    <button class="delete" {{action 'delete'}}>Delete</button>
+  </div>
+  {{/unless}}
+{{yield}}

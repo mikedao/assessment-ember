@@ -2,7 +2,7 @@
 <ul>
 {{#each list in model}}
   {{#if list.active}}
-  <li>{{link-to list.title 'lists.show' list}} Status: {{list.active}} ({{list.tasks.length}})</li>
+    {{list-component list = list}}
   {{/if}}
 {{/each}}
   </ul>
@@ -11,7 +11,7 @@
   <ul>
   {{#each list in model}}
   {{#unless list.active}}
-  <li>{{link-to list.title 'lists.show' list}} Status: {{list.active}} ({{list.tasks.length}})</li>
+    {{list-component list = list}}
   {{/unless}}
 {{/each}}
 </ul>
